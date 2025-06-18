@@ -1,0 +1,95 @@
+.about-us {
+    background: linear-gradient(135deg, #f0f4ff 0%, #d9e4ff 100%);
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+    &:hover {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+    }
+}
+
+
+/* Titre principal */
+
+.about-container h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #001f7a;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 2px 2px 8px rgba(0, 31, 122, 0.15);
+}
+
+
+/* Titres secondaires */
+
+.about-container h3 {
+    font-size: 1.8rem;
+    color: #004aad;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    padding-left: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+
+/* Paragraphes */
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+    text-align: justify;
+    word-spacing: 0.05em;
+    letter-spacing: 0.02em;
+}
+
+
+/* Listes */
+
+.about-container ul {
+    list-style-type: disc;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.about-container ul li {
+    margin-bottom: 12px;
+    color: #444;
+    font-size: 1.05rem;
+    position: relative;
+    transition: color 0.3s ease;
+    &:hover {
+        color: #007bff;
+    }
+}
+
+
+/* Liens */
+
+.about-container a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    &:hover {
+        border-color: #0066ff;
+        text-decoration: none;
+    }
+}

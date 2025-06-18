@@ -1,0 +1,94 @@
+<div class="commande-page">
+    <header class="commande-header">
+        <h1>Passer une commande</h1>
+        <p class="subtitle">Sélectionnez vos articles et entrez vos informations pour compléter la commande</p>
+    </header>
+
+    <div class="steps">
+        <div class="step active" data-step="1">
+            <div class="circle"></div>
+            <p>Articles</p>
+        </div>
+        <div class="step" data-step="2">
+            <div class="circle"></div>
+            <p>Informations</p>
+        </div>
+        <div class="step" data-step="3">
+            <div class="circle"></div>
+            <p>Paiement</p>
+        </div>
+    </div>
+
+    <!-- Étape 1: Articles -->
+    <div class="step-content active" id="step-1">
+        <h2>Sélectionnez vos articles</h2>
+        <div id="article-list" class="articles-container"></div>
+
+        <div class="btn-group">
+            <button class="btn next-step">Suivant</button>
+        </div>
+    </div>
+
+    <!-- Étape 2: Informations -->
+    <div class="step-content" id="step-2">
+        <h2>Vos informations</h2>
+
+        <form id="client-form" class="client-form">
+            <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" placeholder="Votre nom" required />
+            </div>
+
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" placeholder="Votre adresse" required />
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" placeholder="Votre numéro" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Votre email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="date-collecte">Date de collecte</label>
+                <input type="date" id="date-collecte" required />
+            </div>
+
+            <div class="form-group">
+                <label for="instructions">Instructions spéciales</label>
+                <textarea id="instructions" rows="3" placeholder="Notes supplémentaires..."></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn secondary prev-step">Retour</button>
+                <button type="submit" class="btn">Suivant</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Étape 3: Paiement -->
+    <div class="step-content" id="step-3">
+        <h2>Récapitulatif</h2>
+
+        <div id="recapitulatif" class="recap-container"></div>
+
+        <div class="form-group payment-method">
+            <label for="payment-method">Méthode de paiement</label>
+            <select id="payment-method" class="payment-select">
+                <option value="card">Carte de crédit</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash">Espèces à la livraison</option>
+            </select>
+        </div>
+
+        <div class="btn-group confirm-group">
+            <button type="button" class="btn secondary prev-step">Retour</button>
+            <button type="button" class="btn confirm-btn" id="confirm-btn">Confirmer la commande</button>
+        </div>
+    </div>
+</div>
