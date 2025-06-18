@@ -1,0 +1,147 @@
+// Variables de couleur
+$primary-color: #007bff;
+$secondary-color: #0056b3;
+$background-color: #f4f4f4;
+$text-color: #333;
+$border-radius: 8px;
+
+// Conteneur principal
+.register-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-group {
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: $text-color;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: $border-radius;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+
+            &:focus {
+                border-color: $primary-color;
+                outline: none;
+                box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+            }
+        }
+    }
+
+    .btn-connexion {
+        width: 100%;
+        padding: 12px;
+        background: $primary-color;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+
+        &:hover {
+            background: $secondary-color;
+        }
+    }
+
+    .link-bottom {
+        margin-top: 15px;
+        font-size: 14px;
+
+        a {
+            color: $primary-color;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+// Animation au chargement
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+// RESPONSIVITÉ
+@media (max-width: 768px) {
+    .register-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .btn-connexion {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .btn-connexion {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

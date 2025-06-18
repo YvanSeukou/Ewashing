@@ -1,0 +1,190 @@
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+
+    thead tr {
+        background-color: #1910c4; // Bleu plus moderne
+        color: #ffffff;
+        text-align: left;
+    }
+
+    th,
+    td {
+        padding: 1rem 1.25rem;
+        text-align: left;
+    }
+
+    th {
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.2s ease;
+
+        &:nth-of-type(even) {
+            background-color: #f9fafb;
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: #f3f4f6;
+        }
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    button {
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+
+        &.edit-btn {
+            background-color: #09b5ff; // Bleu clair plus vif
+            color: #1e3a8a;
+
+            &:hover {
+                background-color: #0ea5e9;
+                transform: translateY(-1px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &.delete-btn {
+            background-color: #e41c3d; // Rose plus vif
+            color: white;
+
+            &:hover {
+                background-color: #e11d48;
+                transform: translateY(-1px);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
+.error {
+    color: #dc2626;
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+/* Responsive amélioré */
+@media screen and (max-width: 768px) {
+    .user-table {
+        display: block;
+        box-shadow: none;
+        background: transparent;
+        font-size: 0.9rem;
+
+        thead {
+            display: none;
+        }
+
+        tbody,
+        tr {
+            display: block;
+        }
+
+        tr {
+            margin-bottom: 1.25rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-align: right;
+            border-bottom: 1px solid #f5f5f5;
+
+            &:before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #4f46e5;
+                margin-right: auto;
+                padding-right: 1rem;
+                text-align: left;
+            }
+
+            &:last-child {
+                border-bottom: none;
+                justify-content: flex-end;
+                gap: 0.5rem;
+                padding-top: 1rem;
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        .action-buttons {
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        button {
+            padding: 0.5rem 0.9rem;
+        }
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    .user-table {
+        td {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+
+            &:before {
+                align-self: flex-start;
+            }
+        }
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
