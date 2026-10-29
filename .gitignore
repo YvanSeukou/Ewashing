@@ -1,0 +1,10 @@
+# Secrets
+.env
+.env.*
+!.env.example
+# Build / dépendances
+target/
+node_modules/
+dist/
+.idea/
+.vscode/
