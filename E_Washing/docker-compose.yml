@@ -15,6 +15,16 @@ services:
     networks:
       - backend
 
+  mongo:
+    image: mongo:7
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - backend
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: my-phpmyadmin
@@ -33,18 +43,20 @@ services:
     container_name: spring-api
     depends_on:
       - mysql
+      - mongo
     ports:
       - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/EwashingDB?createDatabaseIfNotExist=true&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      SPRING_DATA_MONGODB_URI: ${MONGODB_URI:?définir MONGODB_URI dans .env}
+      SPRING_DATA_MONGODB_URI: ${MONGODB_URI:-mongodb://mongo-db:27017/Ewashing}
     networks:
       - backend
 
 volumes:
   mysql_data:
+  mongo_data:
 
 networks:
   backend:

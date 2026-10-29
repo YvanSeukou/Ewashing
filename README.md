@@ -41,7 +41,7 @@ docker compose up --build
 - API : http://localhost:8080
 - phpMyAdmin : http://localhost:8081
 
-Le conteneur de l'API attend que MySQL soit disponible (`wait-for-it.sh`) avant de démarrer.
+MySQL et MongoDB sont lancés dans des conteneurs : aucune base à installer. Le conteneur de l'API attend que MySQL soit disponible (`wait-for-it.sh`) avant de démarrer.
 
 ## Lancer le front-end
 
